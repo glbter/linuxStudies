@@ -17,7 +17,7 @@ tcp4       0      0  127.0.0.1.6942         *.*                    LISTEN
 49329
 27017
     
-    ```netstat -na | grep LISTEN | awk '{print $4}' | awk '{FS=":"; print $2}' | xargs -I{} echo {}```
+    netstat -na | grep LISTEN | awk '{print $4}' | awk '{FS=":"; print $2}' | xargs -I{} echo {}
 
 
 3. если ты запустиш top, один из параметров будет load average
