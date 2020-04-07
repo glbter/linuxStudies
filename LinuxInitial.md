@@ -151,3 +151,10 @@ creating witn loss of quality (in my case)
 `
 
 creating with timecodes 00:01 - 00:07 infitity looped gif 
+
+
+I tried to create custom build of ffmpeg
+`./configure --disable-all --enable-ffmpeg --enable-small --enable-avcodec --enable-avcodec --enable-avformat --enable-protocol=file --enable-demuxer=movB --enable-swscale --enable-decoder=h264 --enable-encoder=rawvideo,libx264 --enable-avfilter`
+
+`gleb@gleb-HP-250-G6-Notebook-PC:~/Downloads/ffmpeg/ffmpeg-4.2.2$ ls -lh ffmpeg
+-rwxrwxr-x 1 gleb gleb 1,9M кві  7 21:42 ffmpeg`
