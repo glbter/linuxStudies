@@ -110,3 +110,39 @@ b) как заранить одну программу в несколько п�
 
     один паровоз, если тебе нужно сохранить состояние где-то - значит делаеш что-то не так
     `ls | xargs -I{} cat {} | grep -o '[[:alpha:]]*' | sort | uniq -c | sort`
+
+
+10. ffmpeg
+```
+gleb@gleb-HP-250-G6-Notebook-PC:~/Downloads/ffmpeg/ffmpeg-4.2.2$ ./configure
+nasm/yasm not found or too old. Use --disable-x86asm for a crippled build.
+
+If you think configure made a mistake, make sure you are using the latest
+version from Git.  If the latest version fails, report the problem to the
+ffmpeg-user@ffmpeg.org mailing list or IRC #ffmpeg on irc.freenode.net.
+Include the log file "ffbuild/config.log" produced by configure as this will help
+solve the problem.
+```
+==> `sudo apt install yasm` ==> `./configure` ==> `make` compiling for 30 min all packeges ==>
+```
+gleb@gleb-HP-250-G6-Notebook-PC:~$ ffmpeg
+ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.4.0-1ubuntu1~18.04.1)
+  configuration: 
+  libavutil      56. 31.100 / 56. 31.100
+  libavcodec     58. 54.100 / 58. 54.100
+  libavformat    58. 29.100 / 58. 29.100
+  libavdevice    58.  8.100 / 58.  8.100
+  libavfilter     7. 57.100 /  7. 57.100
+  libswscale      5.  5.100 /  5.  5.100
+  libswresample   3.  5.100 /  3.  5.100
+Hyper fast Audio and Video encoder
+usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfile}...
+
+Use -h to get full help or, even better, run 'man ffmpeg'
+```
+create gif
+`ffmpeg -i input.mp4 output.gif`
+creating witn loss of quality (in my case)
+` ffmpeg -ss 1 -t 7 -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
+`creating with timecodes 00:01 - 00:07 infitity looped gif 
