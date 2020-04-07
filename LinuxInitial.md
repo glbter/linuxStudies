@@ -142,7 +142,12 @@ usage: ffmpeg [options] [[infile options] -i infile]... {[outfile options] outfi
 Use -h to get full help or, even better, run 'man ffmpeg'
 ```
 create gif
+
 `ffmpeg -i input.mp4 output.gif`
+
 creating witn loss of quality (in my case)
+
 ` ffmpeg -ss 1 -t 7 -i input.mp4 -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 output.gif
-`creating with timecodes 00:01 - 00:07 infitity looped gif 
+`
+
+creating with timecodes 00:01 - 00:07 infitity looped gif 
