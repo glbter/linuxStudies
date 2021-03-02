@@ -1,0 +1,19 @@
+wing two lines give a two-line status, with the current window highlighted
+
+hardstatus alwayslastline
+
+hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= G}%-w%{y} %n*%t%?(%u)%? %{-}%+w %=%{G}][ %{Y}Load: %l %{g}][%{B}%d-%m-%Y %{W}%c:%s %{g}]'
+
+ defscrollback 5000
+
+ attrcolor b ".I"
+
+ termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+ defbce on
+
+ screen -t bash 1 bash
+
+ select 0
+
+ bind s split
